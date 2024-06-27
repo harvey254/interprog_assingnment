@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age-Based Response Form</title>
+    <link rel="stylesheet" type="text/css" href="form.css">
+    <script type="text/javascript">
+        function displayMessage() {
+            var username = document.getElementById("username").value;
+            var age = document.getElementById("age").value;
+            var message = "";
+
+            if (age < 18) {
+                alert(message = "Hi " + username + ", you are a minor!")
+            } else if (age >= 18 && age <= 65) {
+                alert(message = "Hello " + username + ", you are an adult!")
+            } else if (age > 65) {
+                alert(message = "Greetings " + username + ", you are a senior!")
+            } else {
+                alert(message = "Please enter a valid age.")
+            }
+
+
+            
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1> Welcome </h1>
+        <form onsubmit="return false;">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age"><br><br>
+            <input type="submit" value="Submit" onclick="displayMessage()">
+        </form>
+        <p id="response"></p>
+    </div>
+</body>
+</html>
